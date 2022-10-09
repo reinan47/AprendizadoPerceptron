@@ -36,10 +36,22 @@ public class Perceptron {
 		double yTeste2 = 0;
 		int teste3[] = { /* bias */1,
 								   0, 0, 1,
-								   0, 1, 1,
+								   1, 1, 1,
 								   1, 0, 1,
 								   -1 }; // -1
 		double yTeste3 = 0;
+		int teste4[] = { /* bias */1,
+				   1, 1, 1,
+				   0, 1, 0,
+				   0, 0, 0,
+				   -1 }; // -1
+		double yTeste4 = 0;
+		int teste5[] = { /* bias */1,
+		   1, 1, 1,
+		   1, 0, 1,
+		   1, 1, 1,
+		   -1 }; // -1
+		double yTeste5 = 0;
 		
 		double yPadrao1 = 0;
 		double yPadrao2 = 0;
@@ -96,10 +108,7 @@ public class Perceptron {
 				System.out.println("\n");
 			}
 			for (int n = 0; n < 10; n++) {
-				Random rand = new Random();
-				Double randomPeso = -1 + rand.nextDouble(1 - (-1));
-				randomPeso = Math.round(randomPeso * 10.0) / 10.0;
-				pesos[n] = randomPeso;
+				pesos[n] = Math.round(pesos[n] * 10.0) / 10.0;;
 			}
 
 			// padrao2
@@ -151,10 +160,7 @@ public class Perceptron {
 			}
 
 			for (int n = 0; n < 10; n++) {
-				Random rand = new Random();
-				Double randomPeso = -1 + rand.nextDouble(1 - (-1));
-				randomPeso = Math.round(randomPeso * 10.0) / 10.0;
-				pesos[n] = randomPeso;
+				pesos[n] = Math.round(pesos[n] * 10.0) / 10.0;;
 			}
 
 			// padrao3
@@ -206,10 +212,7 @@ public class Perceptron {
 			}
 
 			for (int n = 0; n < 10; n++) {
-				Random rand = new Random();
-				Double randomPeso = -1 + rand.nextDouble(1 - (-1));
-				randomPeso = Math.round(randomPeso * 10.0) / 10.0;
-				pesos[n] = randomPeso;
+				pesos[n] = Math.round(pesos[n] * 10.0) / 10.0;;
 			}
 			// padrao4
 			yPadrao4 = padrao4[0] * pesos[0] + padrao4[1] * pesos[1] + padrao4[2] * pesos[2] + padrao4[3] * pesos[3]
@@ -260,10 +263,7 @@ public class Perceptron {
 			}
 
 			for (int n = 0; n < 10; n++) {
-				Random rand = new Random();
-				Double randomPeso = -1 + rand.nextDouble(1 - (-1));
-				randomPeso = Math.round(randomPeso * 10.0) / 10.0;
-				pesos[n] = randomPeso;
+				pesos[n] = Math.round(pesos[n] * 10.0) / 10.0;;
 			}
 			// padrao5
 			yPadrao5 = padrao5[0] * pesos[0] + padrao5[1] * pesos[1] + padrao5[2] * pesos[2] + padrao5[3] * pesos[3]
@@ -314,10 +314,7 @@ public class Perceptron {
 			}
 
 			for (int n = 0; n < 10; n++) {
-				Random rand = new Random();
-				Double randomPeso = -1 + rand.nextDouble(1 - (-1));
-				randomPeso = Math.round(randomPeso * 10.0) / 10.0;
-				pesos[n] = randomPeso;
+				pesos[n] = Math.round(pesos[n] * 10.0) / 10.0;;
 			}
 			contadorInteracao++;
 		}
@@ -325,7 +322,7 @@ public class Perceptron {
 				+ teste1[4] * pesos[4] + teste1[5] * pesos[5] + teste1[6] * pesos[6] + teste1[7] * pesos[7]
 				+ teste1[8] * pesos[8] + teste1[9] * pesos[9];
 		yTeste1 = (yTeste1 <= 0 ? -1 : 1);
-		System.out.println("Teste da rede com caractere T : " + yTeste1);
+		System.out.println("\n\nTeste da rede com caractere T : " + yTeste1);
 		yTeste2 = teste2[0] * pesos[0] + teste2[1] * pesos[1] + teste2[2] * pesos[2] + teste2[3] * pesos[3]
 				+ teste2[4] * pesos[4] + teste2[5] * pesos[5] + teste2[6] * pesos[6] + teste2[7] * pesos[7]
 				+ teste2[8] * pesos[8] + teste2[9] * pesos[9];
@@ -336,6 +333,16 @@ public class Perceptron {
 				+ teste3[8] * pesos[8] + teste3[9] * pesos[9];
 		yTeste3 = (yTeste3 <= 0 ? -1 : 1);
 		System.out.println("Teste da rede com caractere INVALIDO : " + yTeste3);
+		yTeste4 = teste4[0] * pesos[0] + teste4[1] * pesos[1] + teste4[2] * pesos[2] + teste4[3] * pesos[3]
+				+ teste4[4] * pesos[4] + teste4[5] * pesos[5] + teste4[6] * pesos[6] + teste4[7] * pesos[7]
+				+ teste4[8] * pesos[8] + teste4[9] * pesos[9];
+		yTeste4 = (yTeste4 <= 0 ? -1 : 1);
+		System.out.println("Teste da rede com caractere INVALIDO : " + yTeste3);
+		yTeste5 = teste5[0] * pesos[0] + teste5[1] * pesos[1] + teste5[2] * pesos[2] + teste5[3] * pesos[3]
+				+ teste5[4] * pesos[4] + teste5[5] * pesos[5] + teste5[6] * pesos[6] + teste5[7] * pesos[7]
+				+ teste5[8] * pesos[8] + teste5[9] * pesos[9];
+		yTeste5 = (yTeste5 <= 0 ? -1 : 1);
+		System.out.println("Teste da rede com caractere INVALIDO : " + yTeste3 + "\n\n");
 		
 		System.out.println("Numero de interacoes para aprendizado : " + contadorInteracao);
 		System.out.println("Atualizacoes de pesos : " + contadorAtualizacaoPeso);

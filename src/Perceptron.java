@@ -8,11 +8,31 @@ import java.util.Random;
 public class Perceptron {
 	public static void main(String[] args) throws InterruptedException {
 		boolean VerificarPesoAdequado[] = { false, false, false, false, false };
-		int padrao1[] = { /* bias */1, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1 }; // 1
-		int padrao2[] = { /* bias */1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1 }; // 1
-		int padrao3[] = { /* bias */1, 1, 1, 0, 1, 0, 0, 0, 0, 1, -1 }; // -1
-		int padrao4[] = { /* bias */1, 1, 1, 1, 0, 1, 0, 0, 0, 0, -1 }; // -1
-		int padrao5[] = { /* bias */1, 0, 0, 1, 1, 1, 1, 1, 0, 1, -1 }; // -1
+		int padrao1[] = { /* bias */1,
+									1, 1, 1, 
+									0, 1, 0,
+									0, 1, 0, 
+									1 }; // 1
+		int padrao2[] = { /* bias */1,
+									1, 0, 1, 
+									1, 1, 1, 
+									1, 0, 1, 
+									1 }; // 1
+		int padrao3[] = { /* bias */1,
+									1, 1, 1, 
+									1, 0, 0, 
+									1, 1, 1, 
+									-1 }; // -1
+		int padrao4[] = { /* bias */1,
+									1, 1, 1, 
+									0, 1, 0, 
+									0, 0, 0, 
+									-1 }; // -1
+		int padrao5[] = { /* bias */1,
+									0, 0, 1, 
+									1, 1, 1,
+									1, 0, 1, 
+									-1 }; // -1
 		int contadorInteracao = 0;
 		int contadorAtualizacaoPeso = 0;
 		double pesos[] = new double[10];
@@ -41,16 +61,16 @@ public class Perceptron {
 								   -1 }; // -1
 		double yTeste3 = 0;
 		int teste4[] = { /* bias */1,
-				   1, 1, 1,
-				   0, 1, 0,
-				   0, 0, 0,
-				   -1 }; // -1
+								   1, 1, 1,
+								   0, 1, 0,
+								   0, 0, 0,
+								   -1 }; // -1
 		double yTeste4 = 0;
 		int teste5[] = { /* bias */1,
-		   1, 1, 1,
-		   1, 0, 1,
-		   1, 1, 1,
-		   -1 }; // -1
+								   1, 1, 1,
+								   1, 0, 0,
+								   1, 1, 1,
+								   1 }; // -1
 		double yTeste5 = 0;
 		
 		double yPadrao1 = 0;
@@ -337,12 +357,12 @@ public class Perceptron {
 				+ teste4[4] * pesos[4] + teste4[5] * pesos[5] + teste4[6] * pesos[6] + teste4[7] * pesos[7]
 				+ teste4[8] * pesos[8] + teste4[9] * pesos[9];
 		yTeste4 = (yTeste4 <= 0 ? -1 : 1);
-		System.out.println("Teste da rede com caractere INVALIDO : " + yTeste3);
+		System.out.println("Teste da rede com caractere INVALIDO : " + yTeste4);
 		yTeste5 = teste5[0] * pesos[0] + teste5[1] * pesos[1] + teste5[2] * pesos[2] + teste5[3] * pesos[3]
 				+ teste5[4] * pesos[4] + teste5[5] * pesos[5] + teste5[6] * pesos[6] + teste5[7] * pesos[7]
 				+ teste5[8] * pesos[8] + teste5[9] * pesos[9];
 		yTeste5 = (yTeste5 <= 0 ? -1 : 1);
-		System.out.println("Teste da rede com caractere INVALIDO : " + yTeste3 + "\n\n");
+		System.out.println("Teste da rede com caractere INVALIDO : " + yTeste5 + "\n\n");
 		
 		System.out.println("Numero de interacoes para aprendizado : " + contadorInteracao);
 		System.out.println("Atualizacoes de pesos : " + contadorAtualizacaoPeso);

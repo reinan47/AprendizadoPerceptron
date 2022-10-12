@@ -86,11 +86,12 @@ public class Perceptron {
 					 + padrao1[8] * pesos[8] + padrao1[9] * pesos[9];
 
 			yPadrao1 = Math.round(yPadrao1 * 10.0) / 10.0;
-			yPadrao1 = (yPadrao1 <= 0 ? -1 : 1);
 			System.out.println("\nCalculo do Y padrao 1");
-			System.out.println( "("+padrao1[0]+"*"+pesos[0]+") + ("+padrao1[1]+"*"+pesos[1]+") + ("+padrao1[2]+"*"+pesos[2]+") + ("+padrao1[3]+"*"+pesos[3]
-				           +") + ("+padrao1[4]+"*"+pesos[4]+") + ("+padrao1[5]+"*"+pesos[5]+") + ("+padrao1[6]+"*"+pesos[6]+") + ("+padrao1[7]+"*"+pesos[7]
-				           +") + ("+padrao1[8]+"*"+pesos[8]+") + ("+padrao1[9]+"*"+pesos[9]+")"+" = "+yPadrao1);
+			System.out.println( "("+padrao1[0]+"*("+pesos[0]+"))+("+padrao1[1]+"*("+pesos[1]+"))+("+padrao1[2]+"*("+pesos[2]+"))+("+padrao1[3]+"*("+pesos[3]
+				            +"))+("+padrao1[4]+"*("+pesos[4]+"))+("+padrao1[5]+"*("+pesos[5]+"))+("+padrao1[6]+"*("+pesos[6]+"))+("+padrao1[7]+"*("+pesos[7]
+				            +"))+("+padrao1[8]+"*("+pesos[8]+"))+("+padrao1[9]+"*("+pesos[9]+"))"+" = "+yPadrao1);
+			yPadrao1 = (yPadrao1 <= 0 ? -1 : 1);
+			System.out.println("Y1 = "+ (int)yPadrao1);
 			VerificarPesoAdequado[0] = true;
 			if (yPadrao1 != padrao1[10]) {
 				contadorAtualizacaoPeso++;
@@ -105,6 +106,8 @@ public class Perceptron {
 				pesos[8] = pesos[8] + 0.4 * padrao1[8] * (padrao1[10] - yPadrao1);
 				pesos[9] = pesos[9] + 0.4 * padrao1[9] * (padrao1[10] - yPadrao1);
 				VerificarPesoAdequado[0] = false;
+				System.out.println("D1 = "+ padrao1[10]);
+				System.out.println((int)yPadrao1 + " <> " + padrao1[10]);
 				System.out.println("Atualizar pesos padrao 1");
 				System.out.printf("%.1f + "+0.4+"*("+padrao1[0]+") * "+"("+padrao1[10]+" - ("+(int)yPadrao1+")) = %.1f",pesos[0],pesos[0]);
 				System.out.println();
@@ -137,11 +140,12 @@ public class Perceptron {
 					 + padrao2[8] * pesos[8] + padrao2[9] * pesos[9];
 
 			yPadrao2 = Math.round(yPadrao2 * 10.0) / 10.0;
-			yPadrao2 = (yPadrao2 <= 0 ? -1 : 1);
 			System.out.println("\nCalculo do Y padrao 2");
-			System.out.println( "("+padrao2[0]+"*"+pesos[0]+") + ("+padrao2[1]+"*"+pesos[1]+") + ("+padrao2[2]+"*"+pesos[2]+") + ("+padrao2[3]+"*"+pesos[3]
-						   +") + ("+padrao2[4]+"*"+pesos[4]+") + ("+padrao2[5]+"*"+pesos[5]+") + ("+padrao2[6]+"*"+pesos[6]+")+("+padrao2[7]+"*"+pesos[7]
-						   +") + ("+padrao2[8]+"*"+pesos[8]+") + ("+padrao2[9]+"*"+pesos[9]+")"+" = "+yPadrao2);
+			System.out.println( "("+padrao2[0]+"*("+pesos[0]+"))+("+padrao2[1]+"*("+pesos[1]+"))+("+padrao2[2]+"*("+pesos[2]+"))+("+padrao2[3]+"*("+pesos[3]
+						    +"))+("+padrao2[4]+"*("+pesos[4]+"))+("+padrao2[5]+"*("+pesos[5]+"))+("+padrao2[6]+"*("+pesos[6]+"))+("+padrao2[7]+"*("+pesos[7]
+					        +"))+("+padrao2[8]+"*("+pesos[8]+"))+("+padrao2[9]+"*("+pesos[9]+"))"+" = "+yPadrao2);
+			yPadrao2 = (yPadrao2 <= 0 ? -1 : 1);
+			System.out.println("Y2 = "+ (int)yPadrao2);
 			VerificarPesoAdequado[1] = true;
 			if (yPadrao2 != padrao2[10]) {
 				contadorAtualizacaoPeso++;
@@ -156,6 +160,8 @@ public class Perceptron {
 				pesos[8] = pesos[8] + 0.4 * padrao2[8] * (padrao2[10] - yPadrao2);
 				pesos[9] = pesos[9] + 0.4 * padrao2[9] * (padrao2[10] - yPadrao2);
 				VerificarPesoAdequado[1] = false;
+				System.out.println("D2 = "+ padrao2[10]);
+				System.out.println((int)yPadrao2 + " <> " + padrao2[10]);
 				System.out.println("Atualizar pesos padrao 2");
 				System.out.printf("%.1f + "+0.4+"*("+padrao2[0]+") * "+"("+padrao2[10]+" - ("+(int)yPadrao2+")) = %.1f",pesos[0],pesos[0]);
 				System.out.println();
@@ -189,11 +195,12 @@ public class Perceptron {
 					 + padrao3[8] * pesos[8] + padrao3[9] * pesos[9];
 
 			yPadrao3 = Math.round(yPadrao3 * 10.0) / 10.0;
-			yPadrao3 = (yPadrao3 <= 0 ? -1 : 1);
 			System.out.println("\nCalculo do Y padrao 3");
-			System.out.println( "("+padrao3[0]+"*"+pesos[0]+") + ("+padrao3[1]+"*"+pesos[1]+") + ("+padrao3[2]+"*"+pesos[2]+") + ("+padrao3[3]+"*"+pesos[3]
-						   +") + ("+padrao3[4]+"*"+pesos[4]+") + ("+padrao3[5]+"*"+pesos[5]+") + ("+padrao3[6]+"*"+pesos[6]+") + ("+padrao3[7]+"*"+pesos[7]
-						   +") + ("+padrao3[8]+"*"+pesos[8]+") + ("+padrao3[9]+"*"+pesos[9]+")"+" = "+yPadrao3);
+			System.out.println( "("+padrao3[0]+"*("+pesos[0]+"))+("+padrao3[1]+"*("+pesos[1]+"))+("+padrao3[2]+"*("+pesos[2]+"))+("+padrao3[3]+"*("+pesos[3]
+						    +"))+("+padrao3[4]+"*("+pesos[4]+"))+("+padrao3[5]+"*("+pesos[5]+"))+("+padrao3[6]+"*("+pesos[6]+"))+("+padrao3[7]+"*("+pesos[7]
+						    +"))+("+padrao3[8]+"*("+pesos[8]+"))+("+padrao3[9]+"*("+pesos[9]+"))"+" = "+yPadrao3);
+			yPadrao3 = (yPadrao3 <= 0 ? -1 : 1);
+			System.out.println("Y3 = "+ (int)yPadrao3);
 			VerificarPesoAdequado[2] = true;
 			if (yPadrao3 != padrao3[10]) {
 				contadorAtualizacaoPeso++;
@@ -208,6 +215,8 @@ public class Perceptron {
 				pesos[8] = pesos[8] + 0.4 * padrao3[8] * (padrao3[10] - yPadrao3);
 				pesos[9] = pesos[9] + 0.4 * padrao3[9] * (padrao3[10] - yPadrao3);
 				VerificarPesoAdequado[2] = false;
+				System.out.println("D3 = "+ padrao3[10]);
+				System.out.println((int)yPadrao3 + " <> " + padrao3[10]);
 				System.out.println("Atualizar pesos padrao 3");
 				System.out.printf("%.1f + "+0.4+"*("+padrao3[0]+") * "+"("+padrao3[10]+" - ("+(int)yPadrao3+")) = %.1f",pesos[0],pesos[0]);
 				System.out.println();
@@ -240,11 +249,12 @@ public class Perceptron {
 					 + padrao4[8] * pesos[8] + padrao4[9] * pesos[9];
 
 			yPadrao4 = Math.round(yPadrao4 * 10.0) / 10.0;
-			yPadrao4 = (yPadrao4 <= 0 ? -1 : 1);
 			System.out.println("\nCalculo do Y padrao 4");
-			System.out.println( "("+padrao4[0]+"*"+pesos[0]+") + ("+padrao4[1]+"*"+pesos[1]+") + ("+padrao4[2]+"*"+pesos[2]+") + ("+padrao4[3]+"*"+pesos[3]
-						   +") + ("+padrao4[4]+"*"+pesos[4]+") + ("+padrao4[5]+"*"+pesos[5]+") + ("+padrao4[6]+"*"+pesos[6]+") + ("+padrao4[7]+"*"+pesos[7]
-						   +") + ("+padrao4[8]+"*"+pesos[8]+") + ("+padrao4[9]+"*"+pesos[9]+")"+" = "+yPadrao4);
+			System.out.println( "("+padrao4[0]+"*("+pesos[0]+"))+("+padrao4[1]+"*("+pesos[1]+"))+("+padrao4[2]+"*("+pesos[2]+"))+("+padrao4[3]+"*("+pesos[3]
+						    +"))+("+padrao4[4]+"*("+pesos[4]+"))+("+padrao4[5]+"*("+pesos[5]+"))+("+padrao4[6]+"*("+pesos[6]+"))+("+padrao4[7]+"*("+pesos[7]
+						    +"))+("+padrao4[8]+"*("+pesos[8]+"))+("+padrao4[9]+"*("+pesos[9]+"))"+" = "+yPadrao4);
+			yPadrao4 = (yPadrao4 <= 0 ? -1 : 1);
+			System.out.println("Y4 = "+ (int)yPadrao4);
 			VerificarPesoAdequado[3] = true;
 			if (yPadrao4 != padrao4[10]) {
 				contadorAtualizacaoPeso++;
@@ -259,6 +269,8 @@ public class Perceptron {
 				pesos[8] = pesos[8] + 0.4 * padrao4[8] * (padrao4[10] - yPadrao4);
 				pesos[9] = pesos[9] + 0.4 * padrao4[9] * (padrao4[10] - yPadrao4);
 				VerificarPesoAdequado[3] = false;
+				System.out.println("D4 = "+ padrao4[10]);
+				System.out.println((int)yPadrao4 + " <> " + padrao4[10]);
 				System.out.println("Atualizar pesos padrao 4");
 				System.out.printf("%.1f + "+0.4+"*("+padrao4[0]+") * "+"("+padrao4[10]+" - ("+(int)yPadrao4+")) = %.1f",pesos[0],pesos[0]);
 				System.out.println();
@@ -289,13 +301,15 @@ public class Perceptron {
 			yPadrao5 = padrao5[0] * pesos[0] + padrao5[1] * pesos[1] + padrao5[2] * pesos[2] + padrao5[3] * pesos[3]
 					+ padrao5[4] * pesos[4] + padrao5[5] * pesos[5] + padrao5[6] * pesos[6] + padrao5[7] * pesos[7]
 					+ padrao5[8] * pesos[8] + padrao5[9] * pesos[9];
-
+			
 			yPadrao5 = Math.round(yPadrao5 * 10.0) / 10.0;
-			yPadrao5 = (yPadrao5 <= 0 ? -1 : 1);
 			System.out.println("\nCalculo do Y padrao 5");
-			System.out.println( "("+padrao5[0]+"*"+pesos[0]+") + ("+padrao5[1]+"*"+pesos[1]+") + ("+padrao5[2]+"*"+pesos[2]+") + ("+padrao5[3]+"*"+pesos[3]
-		    			   +") + ("+padrao5[4]+"*"+pesos[4]+") + ("+padrao5[5]+"*"+pesos[5]+") + ("+padrao5[6]+"*"+pesos[6]+") + ("+padrao5[7]+"*"+pesos[7]
-		    			   +") + ("+padrao5[8]+"*"+pesos[8]+") + ("+padrao5[9]+"*"+pesos[9]+")"+" = "+yPadrao5);
+			System.out.println( "("+padrao5[0]+"*("+pesos[0]+"))+("+padrao5[1]+"*("+pesos[1]+"))+("+padrao5[2]+"*("+pesos[2]+"))+("+padrao5[3]+"*("+pesos[3]
+		    			    +"))+("+padrao5[4]+"*("+pesos[4]+"))+("+padrao5[5]+"*("+pesos[5]+"))+("+padrao5[6]+"*("+pesos[6]+"))+("+padrao5[7]+"*("+pesos[7]
+		    			    +"))+("+padrao5[8]+"*("+pesos[8]+"))+("+padrao5[9]+"*("+pesos[9]+"))"+" = "+yPadrao5);
+			
+			yPadrao5 = (yPadrao5 <= 0 ? -1 : 1);
+			System.out.println("Y5 = "+ (int)yPadrao5);
 			VerificarPesoAdequado[4] = true;
 			if (yPadrao5 != padrao5[10]) {
 				contadorAtualizacaoPeso++;
@@ -310,6 +324,8 @@ public class Perceptron {
 				pesos[8] = pesos[8] + 0.4 * padrao5[8] * (padrao5[10] - yPadrao5);
 				pesos[9] = pesos[9] + 0.4 * padrao5[9] * (padrao5[10] - yPadrao5);
 				VerificarPesoAdequado[4] = false;
+				System.out.println("D5 = "+ padrao5[10]);
+				System.out.println((int)yPadrao5 + " <> " + padrao5[10]);
 				System.out.println("Atualizar pesos padrao 1");
 				System.out.printf("%.1f + "+0.4+"*("+padrao5[0]+") * "+"("+padrao5[10]+" - ("+(int)yPadrao5+")) = %.1f",pesos[0],pesos[0]);
 				System.out.println();
@@ -363,7 +379,6 @@ public class Perceptron {
 				+ teste5[8] * pesos[8] + teste5[9] * pesos[9];
 		yTeste5 = (yTeste5 <= 0 ? -1 : 1);
 		System.out.println("Teste da rede com caractere INVALIDO : " + yTeste5 + "\n\n");
-		
 		System.out.println("Numero de interacoes para aprendizado : " + contadorInteracao);
 		System.out.println("Atualizacoes de pesos : " + contadorAtualizacaoPeso);
 	}
